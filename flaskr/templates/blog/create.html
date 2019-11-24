@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <h1>What's on your mind?</h1>
+
+    <div class='input content-length'>
+    <label for="body">New Post</label>
+    <div class='container-flex'>
+    <textarea name="body" id="body" class="footer-input" maxlength="200" rows="3"></textarea>{{ request.form['body'] }}</textarea>
+    <p class="footer-para textarea-para"></p>
+    </div>
+    </div>
+
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

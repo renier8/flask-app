@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <div class="container">
+      <h1>Sign in to you account</h1>
+
+      <div class="input content-length">
+      <label for="username">Username</label>
+      <div class='container-flex'>
+      <input type="text" name="username" id="username" class="footer-input" maxlength="50" required>
+      <p class="footer-para textarea-para"></p>
+      </div>
+      </div>
+
+      <div class="input content-length">
+      <label for="password">Password</label>
+      <div class='container-flex'>
+      <input type="password" name="password" id="password" class="footer-input" maxlength="50" required>
+      <p class="footer-para textarea-para"></p>
+      </div>
+      </div>
+
+      <button type="submit">Log in</button>
+    </div>
+  </form>
+{% endblock %}

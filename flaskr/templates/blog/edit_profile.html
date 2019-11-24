@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block content %}
+  <form method="POST" enctype="multipart/form-data" autocomplete="off">
+    <h1>Update your profile</h1>
+  
+    <div class="input content-length">
+      <label for="first_name">First name</label>
+      <div class='container-flex'>
+        <input name="first_name" id="first_name" class="footer-input" value="{{ user.first_name if user.first_name }}"
+          maxlength="30">
+        <p class="footer-para"></p>
+      </div>
+    </div>
+  
+  
+    <div class="input content-length">
+      <label for="last_name">Last name</label>
+      <div class='container-flex'>
+        <input name="last_name" id="last_name" class="footer-input" value="{{ user.last_name if user.last_name }}"
+          maxlength="30">
+        <p class="footer-para"></p>
+      </div>
+    </div>
+  
+  
+    <div class="input">
+      <label>Date of birth</label>
+      <div class='date'>
+        <label for="day">Day:</label>
+        <select id='day' name='day'>
+          <option>{{ user.day if user.day }}</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+        </select>
+        <label for="month">Month:</label>
+        <select id="month" name="month">
+          <option>{{ user.month if user.month }}
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>Augustus</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+          <option>{{ user.year if user.year }}
+          <option>2019</option>
+          <option>2018</option>
+          <option>2017</option>
+          <option>2016</option>
+          <option>2015</option>
+          <option>2014</option>
+          <option>2013</option>
+          <option>2012</option>
+          <option>2011</option>
+          <option>2010</option>
+          <option>2009</option>
+          <option>2008</option>
+          <option>2007</option>
+          <option>2006</option>
+          <option>2005</option>
+          <option>2004</option>
+          <option>2003</option>
+          <option>2002</option>
+          <option>2001</option>
+          <option>2000</option>
+          <option>1999</option>
+          <option>1998</option>
+          <option>1997</option>
+          <option>1996</option>
+          <option>1995</option>
+          <option>1994</option>
+          <option>1993</option>
+          <option>1992</option>
+          <option>1991</option>
+          <option>1990</option>
+          <option>1989</option>
+          <option>1988</option>
+          <option>1987</option>
+          <option>1986</option>
+          <option>1985</option>
+          <option>1984</option>
+          <option>1983</option>
+          <option>1982</option>
+          <option>1981</option>
+          <option>1980</option>
+          <option>1979</option>
+          <option>1978</option>
+          <option>1977</option>
+          <option>1976</option>
+          <option>1975</option>
+          <option>1974</option>
+          <option>1973</option>
+          <option>1972</option>
+          <option>1971</option>
+          <option>1970</option>
+          <option>1969</option>
+          <option>1968</option>
+          <option>1967</option>
+          <option>1966</option>
+          <option>1965</option>
+          <option>1964</option>
+          <option>1963</option>
+          <option>1962</option>
+          <option>1961</option>
+          <option>1960</option>
+          <option>1959</option>
+          <option>1958</option>
+          <option>1957</option>
+          <option>1956</option>
+          <option>1955</option>
+          <option>1954</option>
+          <option>1953</option>
+          <option>1952</option>
+          <option>1951</option>
+          <option>1950</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="input content-length">
+      <label for="gender">Gender</label>
+      <div class='container-flex'>
+        <input name="gender" id="gender" class="footer-input" value="{{ user.gender if user.gender }}" maxlength="20">
+        <p class="footer-para"></p>
+      </div>
+    </div>
+  
+    <div class="input content-length">
+      <label for="relationship_status">Relationship Status</label>
+      <div class='container-flex'>
+        <input name="relationship_status" id="relationship_status" class="footer-input"
+          value="{{ user.relationship_status if user.relationship_status }}" maxlength="30">
+        <p class="footer-para"></p>
+      </div>
+    </div>
+  
+  
+    <div class="input content-length">
+      <label for="current_city">Current City</label>
+      <div class='container-flex'>
+        <input name="current_city" id="current_city" class="footer-input"
+          value="{{ user.current_city if user.current_city }}" maxlength="40">
+        <p class="footer-para"></p>
+      </div>
+    </div>
+  
+  
+    <div class="input content-length">
+      <label for="bio">Bio</label>
+      <div class='container-flex'>
+        <textarea name="bio" id="bio" class="footer-input" maxlength="150" rows="3" >{{ user.bio if user.bio}}</textarea>
+        <p class="footer-para textarea-para"></p>
+      </div>
+    </div>
+  
+  
+    <div class="input file_upload">
+      <label for="photo">Upload profile photo</label>
+      <input type="file" name="photo" id="photo">
+    </div>
+  
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

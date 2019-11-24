@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Post{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <h1>Update your post</h1>
+  
+    <div class="input content-length">
+      <label for="body">Post</label>
+      <div class='container-flex'>
+        <textarea name="body" id="body" class="footer-input" maxlength="200"
+          rows="3">{{ request.form['body'] or post.body }}</textarea>
+        <p class="footer-para textarea-para"></p>
+      </div>
+    </div>
+  
+    <input type="submit" value="Save">
+  </form>
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post" class="deleteForm">
+    <input id="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}

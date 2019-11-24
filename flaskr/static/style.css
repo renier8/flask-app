@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box
+}
+
+html {
+    font-family: 'Work Sans', sans-serif;
+    background: #eee;
+    padding: 1rem;
+  }
+
+textarea, input, button, select { font-family: inherit; font-size: inherit; }
+  
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+    background: white;
+  }
+
+  nav {
+    background: lightgray;
+    align-items: center;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  nav h1 {
+    margin: 0;
+  }
+  
+  nav h1 a {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  nav ul  {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  nav ul li a, .action, button, input[type=submit] {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgb(27, 149, 224);
+    color: white;
+    margin: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    text-decoration-line: none;
+    border-radius: 10px;
+    width: max-content;
+  }
+
+  nav ul li a:hover, .action:hover, button:hover, input[type=submit]:hover {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .content {
+    padding: 0 1rem 1rem;
+  }
+  
+  .content > header {
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+  }
+  
+  .content > header h1 {
+    margin: 0;
+  }
+
+  .content form input {
+    display: block;
+  }
+
+  .content:last-child {
+    margin-bottom: 0;
+  }
+  
+  .flash {
+    margin: 1em 0 0 0;
+    padding: 1em;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+  }
+  
+  .post .about {
+    color: slategray;
+    font-style: italic;
+    margin-left: 0.5em;
+  }
+  
+  .post .body {
+    width: 90%;
+  }
+
+  
+  .profile aside {
+    margin-top: 1.33em;
+  }
+
+.input {
+  background: rgb(245, 248, 250);
+  margin-top: 1em;
+  border-bottom: 2px solid rgb(101, 119, 134);
+  color: rgb(101, 119, 134);
+  padding: 0.4em;
+  width: 100%;
+}
+
+input, textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px rgb(245, 248, 250) inset !important;
+}
+
+.input:focus-within {
+  border-bottom-color: rgb(27, 149, 224);
+  color: rgb(27, 149, 224);
+}
+
+.file_upload {
+  width: 50%;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+}
+
+textarea {
+  resize: none;
+}
+
+.deleteForm {
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.post_image{
+  max-width: 50px;
+}
+
+aside a {
+  align-self: center;
+}
+
+.about h1, .about p {
+  margin: 0;
+}
+
+@media screen and (min-width: 20em) {
+  nav {
+    display: flex;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+  }
+
+  nav h1, .content > header h1, .post > header div {
+    flex: auto;
+    text-align: left;
+    align-self: center;
+  }
+
+  nav ul, .content > header {
+    display: flex;  
+  }
+
+  nav ul li a {
+    margin: 0 0.25em;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-header {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .profile {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 1em;
+  }
+
+  .profile aside {
+    font-size: 0.8em;
+  }
+}
+
+select option[disabled] {
+  display: none; /* worked in firefox*/
+  visibility: hidden; /* worked in chrome*/
+}
+.date select {
+  outline: none;
+  border: none;
+  background: inherit;
+}
+
+option {
+  padding: 5px;
+}
+
+select, option {
+  -webkit-appearance: none; /* WebKit/Chromium */
+  -moz-appearance: none; /* Gecko */
+   appearance: none; /* future (or now) */
+}
+
+/* Internet Explorer 10–11 and Edge */
+select::-ms-expand {
+  display: none;
+}
+
+.footer-para {
+  margin: 0;
+}
+
+.container-flex {
+  display: flex;
+}
+
+.textarea-para {
+  align-self: flex-end;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.post:first-of-type {
+  margin-top: 1.33em;
+}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% if user.first_name %}{{ user.first_name }} {{ user.last_name if user.last_name}}{% endif %}
+{% endblock %}
+
+{% block content %}
+<section class='profile'>
+  <aside>
+    <img src="../../static/img/{{ user.profile_pic if user.profile_pic else 'default.jpg' }}">
+    {% if user.first_name or user.last_name %}<p>{{ user.first_name }} {{ user.last_name }}</p>{% endif %}
+    {% if user.day %}<p>Date of birth: {{ user.day }} {{ user.month }} {{ user.year }}</p>{% endif %}
+    {% if user.gender %}<p>Gender: {{ user.gender }}</p>{% endif %}
+    {% if user.relationship_status %}<p>Relationship status: {{ user.relationship_status }}</p>{% endif %}
+    {% if user.current_city %}<p>Current city: {{ user.current_city }}</p>{% endif %}
+    {% if user.bio %}<p class="bio">Bio: {{ user.bio }}</p>{% endif %}
+    <a class="action" href="{{ url_for('blog.edit_profile', username=g.user.username) }}">Edit profile</a>
+  </aside>
+  <main>
+    {% for post in posts %}
+    <article class="post">
+      <div class='post-header'>
+        <img src="../../static/img/{{ post.author.profile_pic if post.author.profile_pic else 'default.jpg' }}"
+          class=post_image>
+        <div class="about">
+          <h1>{{ post.author.username }}</h1>
+          <p> on {{ post['created'].strftime('%H:%M %d %b %Y') }}</p>
+        </div>
+      </div>
+      <p class="body">{{ post['body'] }}</p>
+      {% if g.user.id == post.user_id %}
+      <a class="action" href="{{ url_for('blog.update', id=post.id) }}">Edit</a>
+      {% endif %}
+    </article>
+    {% if not loop.last %}
+    <hr>
+    {% endif %}
+    {% endfor %}
+  </main>
+</section>
+{% endblock %}
